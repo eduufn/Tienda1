@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tienda de Ropa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="display-6">PEPUÑO</h1>
+            <div class="d-flex align-items-center">
+                <div class="cart-icon me-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    <span class="badge bg-danger" id="cartCount">0</span>
+                </div>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#registroModal"><i class="bi bi-person"></i> </button>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <!-- Sección de bienvenida -->
+        <section id="home">
+            <h2 class="mb-4">Bienvenidos</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="lead">Estamos encantados de que estés aquí. En PEPUÑO, encontrarás una selección de ropa con estilo y calidad que se adapta a tus necesidades. Explora nuestras colecciones y descubre las últimas tendencias.
+
+                        Nuestro equipo está listo para ayudarte con cualquier pregunta o asesoramiento. ¡Disfruta de tu experiencia de compra en PEPUÑO!
+                        </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="/Avance de proyecto/img/tienda.jpg" alt="Fachada de la tienda" class="img-fluid rounded" width="600" height="600">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de productos -->
+        <section id="products" class="mt-5">
+            <h2 class="mb-4">Nuestros Productos</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/polo.jpg" class="card-img-top" alt="Camisa sport">
+                        <div class="card-body">
+                            <h5 class="card-title">Polo</h5>
+                            <span class="text-decoration-line-through text-danger">S/39.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+                            <p class="card-text">S/29.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Camisa sport', 29.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/pantalon.jpg" class="card-img-top" alt="Pantalón">
+                        <div class="card-body">
+                            <h5 class="card-title">Pantalón</h5>
+                            <span class="text-decoration-line-through text-danger">S/59.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+                            <p class="card-text">S/49.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Pantalón', 49.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/polera.jpg" class="card-img-top" alt="Vestido">
+                        <div class="card-body">
+                            <h5 class="card-title">Polera</h5>
+                            <span class="text-decoration-line-through text-danger">S/89.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+
+                            <p class="card-text">S/79.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Vestido', 79.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/camisa.jpg" class="card-img-top" alt="Casaca de Cuero">
+                        <div class="card-body">
+                            <h5 class="card-title">Camisa</h5>
+                            <span class="text-decoration-line-through text-danger">S/109.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+
+                            <p class="card-text">S/99.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Casaca de Cuero', 99.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/polo.jpg" class="card-img-top" alt="Camisa sport">
+                        <div class="card-body">
+                            <h5 class="card-title">Polo</h5>
+                            <span class="text-decoration-line-through text-danger">S/39.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+                            <p class="card-text">S/29.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Camisa sport', 29.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/pantalon.jpg" class="card-img-top" alt="Pantalón">
+                        <div class="card-body">
+                            <h5 class="card-title">Pantalón</h5>
+                            <span class="text-decoration-line-through text-danger">S/59.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+                            <p class="card-text">S/49.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Pantalón', 49.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/polera.jpg" class="card-img-top" alt="Vestido">
+                        <div class="card-body">
+                            <h5 class="card-title">Polera</h5>
+                            <span class="text-decoration-line-through text-danger">S/89.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+
+                            <p class="card-text">S/79.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Vestido', 79.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/camisa.jpg" class="card-img-top" alt="Casaca de Cuero">
+                        <div class="card-body">
+                            <h5 class="card-title">Camisa</h5>
+                            <span class="text-decoration-line-through text-danger">S/109.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+
+                            <p class="card-text">S/99.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Casaca de Cuero', 99.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/polo.jpg" class="card-img-top" alt="Camisa sport">
+                        <div class="card-body">
+                            <h5 class="card-title">Polo</h5>
+                            <span class="text-decoration-line-through text-danger">S/39.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+                            <p class="card-text">S/29.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Camisa sport', 29.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/pantalon.jpg" class="card-img-top" alt="Pantalón">
+                        <div class="card-body">
+                            <h5 class="card-title">Pantalón</h5>
+                            <span class="text-decoration-line-through text-danger">S/59.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+                            <p class="card-text">S/49.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Pantalón', 49.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/polera.jpg" class="card-img-top" alt="Vestido">
+                        <div class="card-body">
+                            <h5 class="card-title">Polera</h5>
+                            <span class="text-decoration-line-through text-danger">S/89.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+
+                            <p class="card-text">S/79.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Vestido', 79.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/Avance de proyecto/img/camisa.jpg" class="card-img-top" alt="Casaca de Cuero">
+                        <div class="card-body">
+                            <h5 class="card-title">Camisa</h5>
+                            <span class="text-decoration-line-through text-danger">S/109.99</span><!-- Precio de descuento en rodo utilizar text-decoration-line-through text-danger -->
+
+                            <p class="card-text">S/99.99</p>
+                            <button class="btn btn-primary" onclick="addToCart('Casaca de Cuero', 99.99)">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Sección sobre nosotros -->
+        <section id="about" class="mt-5">
+            <h2 class="mb-4">Sobre Nosotros</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        “Pepuño” es una tienda de ropa que se ha consolidado como una de las favoritas en el mercado peruano, especialmente en la zona de Gamarra, conocida por ser un importante centro comercial textil en Lima. La tienda ofrece una amplia gama de prendas tanto para hombres como para mujeres, destacándose por su calidad, estilo y precios accesibles.</p>
+                    <p>Historia y Filosofía
+                        Fundada con la visión de proporcionar moda accesible y de alta calidad, “Pepuño” ha crecido rápidamente gracias a su compromiso con la satisfacción del cliente y la innovación constante en sus diseños. La filosofía de la tienda se centra en ofrecer ropa que combine comodidad, estilo y durabilidad, adaptándose a las tendencias actuales sin perder su esencia única.</p>
+                    <p>Compromiso con la Calidad y la Sostenibilidad
+                        “Pepuño” se compromete a utilizar materiales de alta calidad y procesos de producción sostenibles. La tienda busca minimizar su impacto ambiental y promover prácticas responsables en la industria de la moda.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/5Jt2j19C0MY?si=VMCzR2yJRSjrxyh-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto -->
+        <section id="contact" class="mt-5">
+            <h2 class="mb-4">Contáctanos</h2>
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 - Tienda de Ropa.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para el carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+                </div>
+                <div class="modal-body" id="cartItems">
+                    <!-- Los items del carrito se insertarán aquí dinámicamente -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success">Proceder al pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para el registro de usuario -->
+    <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Cabeza -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registroModalLabel">Registro de Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Cuerpo -->
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genero" class="form-label">Género:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="genero" id="masculino" value="m" checked>
+                                <label class="form-check-label" for="masculino">Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="genero" id="femenino" value="f">
+                                <label class="form-check-label" for="femenino">Femenino</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pais" class="form-label">Pais:</label>
+                            <select class="form-select" id="pais" size="6" required>
+                                <option selected>Seleccionar tu país</option>
+                                <option value="1">Perú</option>
+                                <option value="2">México</option>
+                                <option value="3">Ecuador</option>
+                                <option value="4">Argentina</option>
+                                <option value="5">Colombia</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmarPassword" class="form-label">Confirmar Contraseña:</label>
+                            <input type="password" class="form-control" id="confirmarPassword" required>
+                        </div>
+                        <div class="mb-3 form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="notificaciones" checked>
+                            <label class="form-check-label" for="notificaciones">Recibir notificaciones</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </form>
+                </div>
+                <!-- Pie -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        let cart = [];
+
+        function addToCart(productName, price) {
+            cart.push({name: productName, price: price});
+            updateCart();
+            updateCartCount();
+            alert(`${productName} añadido al carrito!`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        function updateCart() {
+            let cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                cartItems.innerHTML += `
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span>${item.name} - S/${item.price.toFixed(2)}</span>
+                        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">
+                            <i class="bi bi-trash"></i> Eliminar
+                        </button>
+                    </div>
+                `;
+            });
+        }
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Formulario enviado correctamente.');
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+</html>
